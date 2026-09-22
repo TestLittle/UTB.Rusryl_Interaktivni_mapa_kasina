@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="UTB.Rusryl_Interaktivni_mapa_kasina.Application/UTB.Rusryl_Interaktivni_mapa_kasina.Application.csproj" />
+  <Project Path="UTB.Rusryl_Interaktivni_mapa_kasina.Domain/UTB.Rusryl_Interaktivni_mapa_kasina.Domain.csproj" />
+  <Project Path="UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure/UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.csproj" />
+  <Project Path="UTB.Rusryl_Interaktivni_mapa_kasina.Web/UTB.Rusryl_Interaktivni_mapa_kasina.Web.csproj" />
+</Solution>
