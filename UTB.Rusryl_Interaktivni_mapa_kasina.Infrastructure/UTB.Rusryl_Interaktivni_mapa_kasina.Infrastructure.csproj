@@ -15,4 +15,8 @@
     <PackageReference Include="Microting.EntityFrameworkCore.MySql" Version="10.0.12" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UTB.Rusryl_Interaktivni_mapa_kasina.Domain\UTB.Rusryl_Interaktivni_mapa_kasina.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

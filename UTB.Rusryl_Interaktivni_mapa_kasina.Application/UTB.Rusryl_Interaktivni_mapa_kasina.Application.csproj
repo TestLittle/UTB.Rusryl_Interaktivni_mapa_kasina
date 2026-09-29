@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UTB.Rusryl_Interaktivni_mapa_kasina.Domain\UTB.Rusryl_Interaktivni_mapa_kasina.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

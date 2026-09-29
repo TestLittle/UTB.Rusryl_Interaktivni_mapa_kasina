@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = builder.Configuration.GetConnectionString("MySQL");
+var serverVersion = ServerVersion.AutoDetect(connectionString);
+builder.Services.AddDbContext<CasinoMapDbContext>(optionBuilder => optionBuilder.UseMySql(connectionString, serverVersion));
 
 var app = builder.Build();
 

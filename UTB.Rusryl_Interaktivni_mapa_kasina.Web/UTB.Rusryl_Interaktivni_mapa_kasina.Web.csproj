@@ -13,4 +13,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UTB.Rusryl_Interaktivni_mapa_kasina.Application\UTB.Rusryl_Interaktivni_mapa_kasina.Application.csproj" />
+    <ProjectReference Include="..\UTB.Rusryl_Interaktivni_mapa_kasina.Domain\UTB.Rusryl_Interaktivni_mapa_kasina.Domain.csproj" />
+    <ProjectReference Include="..\UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure\UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
