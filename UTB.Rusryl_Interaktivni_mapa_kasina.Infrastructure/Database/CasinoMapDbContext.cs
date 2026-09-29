@@ -11,5 +11,12 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            //var 
+        }
     }
 }
