@@ -1,0 +1,12 @@
+Funkcionální požadavky pro projekt do Pokročilých webových aplikací
+Vytvoření pinů na mapě pouze pro přihlášené uživatele
+Tyto piny budou obsahovat obrázky z kasina a komentáře od uživatelů
+Sidebar s filtry jednotlivých her a obrázků z kasina
+Různé druhy obrázků, podle kterých by se dalo filtrovat, například interiér, exteriér, typ hry
+Každý filtr by měl počet obrázků/pinů na mapě uveden na sidebaru
+Zoom in and zoom out
+Pohyb mapou myší
+Tlačítko pro login a registraci
+Peněžní balanc, u něj tlačítko pro přidání a výběr peněz
+Search
+Možná vytvořit email newsletter, který bude posílat různé nabídky podle dne
