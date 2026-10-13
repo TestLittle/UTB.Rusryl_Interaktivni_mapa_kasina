@@ -12,7 +12,13 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
         [Required]
         public string ImageSrc { get; set; }
         public string Address { get; set; }
-        public bool Visited { get; set; }
         public string CoordsOnMap { get; set; }
+
+        [ForeignKey(nameof(Type))]
+        public int TypeID { get; set; }
+
+        [ForeignKey(nameof(Kind))]
+        public int KindID { get; set; }
+        public IList<Comment> Comments { get; set; }
     }
 }

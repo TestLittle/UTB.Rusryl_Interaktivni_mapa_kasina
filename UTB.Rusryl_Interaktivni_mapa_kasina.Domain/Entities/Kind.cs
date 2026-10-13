@@ -6,5 +6,6 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
     public class Kind : Entity<int>
     {
         public string KindName { get; set; }
+        public IList<Location> Locations { get; set; }
     }
 }

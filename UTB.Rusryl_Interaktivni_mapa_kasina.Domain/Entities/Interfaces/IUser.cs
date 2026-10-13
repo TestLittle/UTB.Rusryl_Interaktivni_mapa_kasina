@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities.Interfaces
 {
     public interface IUser<TKey> : IEntity<TKey>

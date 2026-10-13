@@ -12,5 +12,10 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
         public string Content { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime DateAndTime { get; protected set; }
+
+        [ForeignKey(nameof(Location))]
+        public int LocationId { get; set; }
+        public Location Location { get; set; }
+        
     }
 }
