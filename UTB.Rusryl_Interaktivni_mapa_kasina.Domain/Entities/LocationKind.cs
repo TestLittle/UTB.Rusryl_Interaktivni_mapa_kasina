@@ -2,10 +2,10 @@
 
 namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
 {
-    [Table(nameof(Type))]
-    public class Type : Entity<int>
+    [Table(nameof(LocationKind))]
+    public class LocationKind : Entity<int>
     {
-        public string TypeName { get; set; }
+        public string LocationKindName { get; set; }
         public IList<Location> Locations { get; set; }
     }
 }
