@@ -12,5 +12,8 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
         public string ExpirationDate { get; set; }
         [Required]
         public string SecurityCode { get; set; }
+        [ForeignKey(nameof(CardType))]
+        public int CardTypeId { get; set; }
+        public CardType CardType { get; set; }
     }
 }
