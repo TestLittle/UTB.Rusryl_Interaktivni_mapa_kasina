@@ -1,6 +1,4 @@
-﻿
-
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities.Interfaces;
 
 namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Repositories
