@@ -14,11 +14,11 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
         public string CoordsOnMap { get; set; }
 
         [ForeignKey(nameof(LocationType))]
-        public int LocationTypeID { get; set; }
+        public int LocationTypeId { get; set; }
         public LocationType LocationType { get; set; }
 
         [ForeignKey(nameof(LocationKind))]
-        public int LocationKindID { get; set; }
+        public int LocationKindId { get; set; }
         public LocationKind LocationKind { get; set; }
         public IList<Comment> Comments { get; set; }
     }
