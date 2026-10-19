@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities;
+using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database.Seeding;
 
 namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database
 {
@@ -21,7 +22,23 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database
         {
             base.OnModelCreating(modelBuilder);
 
-            //var 
+            LocationTypeInit locationTypeInit = new LocationTypeInit();
+            modelBuilder.Entity<LocationType>().HasData(locationTypeInit.GetLocationTypes());
+
+            LocationKindInit locationKindInit = new LocationKindInit();
+            modelBuilder.Entity<LocationKind>().HasData(locationKindInit.GetLocationKinds());
+
+            LocationInit locationInit = new LocationInit();
+            modelBuilder.Entity<Location>().HasData(locationInit.GetLocations());
+
+            GameInit gameInit = new GameInit();
+            modelBuilder.Entity<Game>().HasData(gameInit.GetGames());
+
+            CardTypeInit cardTypeInit = new CardTypeInit();
+            modelBuilder.Entity<CardType>().HasData(cardTypeInit.GetCardTypes());
+
+            CardInit cardInit = new CardInit();
+            modelBuilder.Entity<Card>().HasData(cardInit.GetCards());
         }
     }
 }
