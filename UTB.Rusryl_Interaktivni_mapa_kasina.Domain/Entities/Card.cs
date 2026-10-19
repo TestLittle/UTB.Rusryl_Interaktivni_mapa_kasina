@@ -7,7 +7,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
     public class Card : Entity<int>
     {
         [Required]
-        public int CardNumber { get; set; }
+        public long CardNumber { get; set; }
         [Required]
         public string ExpirationDate { get; set; }
         [Required]
