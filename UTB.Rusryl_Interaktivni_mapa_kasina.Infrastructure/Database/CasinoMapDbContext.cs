@@ -27,7 +27,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database
 
             LocationKindInit locationKindInit = new LocationKindInit();
             modelBuilder.Entity<LocationKind>().HasData(locationKindInit.GetLocationKinds());
-
+            
             LocationInit locationInit = new LocationInit();
             modelBuilder.Entity<Location>().HasData(locationInit.GetLocations());
 
@@ -39,6 +39,9 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database
 
             CardInit cardInit = new CardInit();
             modelBuilder.Entity<Card>().HasData(cardInit.GetCards());
+
+            CommentInit commentInit = new CommentInit();
+            modelBuilder.Entity<Comment>().HasData(commentInit.GetComments());
         }
     }
 }

@@ -18,9 +18,9 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
         public int LocationId { get; set; }
         public Location Location { get; set; }
 
-        [ForeignKey(nameof(User))]
+        //[ForeignKey(nameof(User))]
         public int UserId { get; set; }
-        public IUser<int> User { get; set; }
+        //public IUser<int> User { get; set; }
         
     }
 }
