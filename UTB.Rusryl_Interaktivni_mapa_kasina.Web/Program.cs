@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Repositories;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database;
+using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,8 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("MySQL");
 var serverVersion = ServerVersion.AutoDetect(connectionString);
 builder.Services.AddDbContext<CasinoMapDbContext>(optionBuilder => optionBuilder.UseMySql(connectionString, serverVersion));
+
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 
 var app = builder.Build();
 
