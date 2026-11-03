@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using UTB.Rusryl_Interaktivni_mapa_kasina.Application.Abstraction;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Repositories;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Repository;
@@ -16,6 +17,8 @@ builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<ICardRepository, CardRepository>();
 builder.Services.AddScoped<IGameRepository, GameRepository>();
+
+builder.Services.AddScoped<ILocationAppService, ILocationAppService>
 
 var app = builder.Build();
 

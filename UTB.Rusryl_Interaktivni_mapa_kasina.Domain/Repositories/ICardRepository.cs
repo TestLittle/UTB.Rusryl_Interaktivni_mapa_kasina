@@ -5,7 +5,7 @@ using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities;
 
 namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Repositories
 {
-    public interface ICardRepository : IRepository<Card, T>
+    public interface ICardRepository : IRepository<Card, int>
     {
     }
 }

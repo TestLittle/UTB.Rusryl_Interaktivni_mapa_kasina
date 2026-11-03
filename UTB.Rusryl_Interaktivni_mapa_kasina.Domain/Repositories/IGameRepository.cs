@@ -5,7 +5,7 @@ using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities;
 
 namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Repositories
 {
-    public interface IGameRepository : IRepository<Game, T>
+    public interface IGameRepository : IRepository<Game, int>
     {
     }
 }
