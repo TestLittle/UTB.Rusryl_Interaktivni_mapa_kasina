@@ -10,6 +10,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
         public string Name { get; set; }
         [Required]
         public string ImageSrc { get; set; }
+        [Required]
         public string Address { get; set; }
         public string CoordsOnMap { get; set; }
 

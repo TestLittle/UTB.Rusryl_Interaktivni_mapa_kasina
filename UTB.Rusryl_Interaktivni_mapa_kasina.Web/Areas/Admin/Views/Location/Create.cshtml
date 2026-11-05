@@ -1,0 +1,23 @@
+﻿@using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
+@model Location
+
+@{
+    ViewData["Title"] = "Create New Location";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label class="form-label" asp-for="Name"></label>
+        <input class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="Address"></label>
+        <input class="form-control" asp-for="Address">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="ImageSrc"></label>
+        <input class="form-control" asp-for="ImageSrc">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

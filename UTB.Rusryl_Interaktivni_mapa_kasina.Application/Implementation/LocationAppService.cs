@@ -18,5 +18,10 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Application.Implementation
             return _locationRepository.GetAll().ToList();
         }
 
+        public void Create(Location location)
+        {
+            _locationRepository.Add(location);
+        }
+
     }
 }
