@@ -6,5 +6,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Application.Abstraction
     {
         IList<Location> SelectAll();
         void Create(Location location);
+        void Edit(int id);
+        bool Delete(int id);
     }
 }

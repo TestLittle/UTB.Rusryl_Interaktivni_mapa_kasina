@@ -23,5 +23,21 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Application.Implementation
             _locationRepository.Add(location);
         }
 
+        public void Edit(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(int id)
+        {
+            bool deleted = false;
+            Location? location = _locationRepository.GetById(id);
+            if (location != null) {
+                _locationRepository.Delete(location);
+                deleted = true;
+            }
+
+            return deleted;
+        }
     }
 }

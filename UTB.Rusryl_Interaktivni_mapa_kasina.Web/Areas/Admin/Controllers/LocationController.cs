@@ -33,5 +33,21 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Web.Areas.Admin.Controllers
             _locationAppService.Create(location);
             return RedirectToAction(nameof(LocationController.Index));
         }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            bool deleted = _locationAppService.Delete(id);
+
+            if (deleted)
+            {
+                return RedirectToAction(nameof(LocationController.Index));
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
     }
 }
