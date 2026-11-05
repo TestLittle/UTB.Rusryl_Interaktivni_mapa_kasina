@@ -1,0 +1,30 @@
+﻿@model Location
+
+@{
+    ViewData["Title"] = "Edit Location";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="mb-3">
+        <label class="form-label" asp-for="Name">@Model[i].Name</label>
+        <input class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="Address">@Model[i].Address</label>
+        <input class="form-control" asp-for="Address">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="ImageSrc">@Model[i].ImageSrc</label>
+        <input class="form-control" asp-for="ImageSrc">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="LocationType">@Model[i].LocationType</label>
+        <input class="form-control" asp-for="LocationType">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="LocationKind">@Model[i].LocationKind</label>
+        <input class="form-control" asp-for="LocationKind">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
