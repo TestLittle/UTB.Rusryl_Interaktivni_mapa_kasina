@@ -1,30 +1,37 @@
-﻿@model Location
+﻿@using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
+@model Location
 
 @{
     ViewData["Title"] = "Edit Location";
+    int Id;
 }
 <h1>@ViewData["Title"]</h1>
 
 <form asp-action="Edit" method="post">
     <div class="mb-3">
-        <label class="form-label" asp-for="Name">@Model[i].Name</label>
+        <label class="form-label" asp-for="Name"></label>
         <input class="form-control" asp-for="Name">
     </div>
     <div class="mb-3">
-        <label class="form-label" asp-for="Address">@Model[i].Address</label>
+        <label class="form-label" asp-for="Address"></label>
         <input class="form-control" asp-for="Address">
     </div>
     <div class="mb-3">
-        <label class="form-label" asp-for="ImageSrc">@Model[i].ImageSrc</label>
+        <label class="form-label" asp-for="ImageSrc"></label>
         <input class="form-control" asp-for="ImageSrc">
     </div>
     <div class="mb-3">
-        <label class="form-label" asp-for="LocationType">@Model[i].LocationType</label>
-        <input class="form-control" asp-for="LocationType">
+        <label class="form-label" asp-for="CoordsOnMap"></label>
+        <input class="form-control" asp-for="CoordsOnMap">
     </div>
     <div class="mb-3">
-        <label class="form-label" asp-for="LocationKind">@Model[i].LocationKind</label>
-        <input class="form-control" asp-for="LocationKind">
+        <label class="form-label" asp-for="LocationTypeId"></label>
+        <input class="form-control" asp-for="LocationTypeId">
     </div>
-    <button type="submit" class="btn btn-success">Submit</button>
+    <div class="mb-3">
+        <label class="form-label" asp-for="LocationKindId"></label>
+        <input class="form-control" asp-for="LocationKindId">
+    </div>
+    <button type="submit" class="btn btn-primary">Edit</button>
+    <a asp-action="PinManagement" class="btn btn-danger">Cancel</a>
 </form>
