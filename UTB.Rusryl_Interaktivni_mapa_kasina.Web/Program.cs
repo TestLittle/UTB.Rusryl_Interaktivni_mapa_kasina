@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Application.Abstraction;
+using UTB.Rusryl_Interaktivni_mapa_kasina.Application.Implementation;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Repositories;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Repository;
@@ -18,10 +19,10 @@ builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<ICardRepository, CardRepository>();
 builder.Services.AddScoped<IGameRepository, GameRepository>();
 
-builder.Services.AddScoped<ILocationAppService, ILocationAppService>();
-builder.Services.AddScoped<ICommentAppService, ICommentAppService>();
-builder.Services.AddScoped<ICardAppService, ICardAppService>();
-builder.Services.AddScoped<IGameAppService, IGameAppService>();
+builder.Services.AddScoped<ILocationAppService, LocationAppService>();
+builder.Services.AddScoped<ICommentAppService, CommentAppService>();
+builder.Services.AddScoped<ICardAppService, CardAppService>();
+builder.Services.AddScoped<IGameAppService, GameAppService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

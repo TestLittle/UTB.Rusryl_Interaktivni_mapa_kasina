@@ -6,7 +6,7 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<a asp-action="Create">Create Product</a>
+<a class ="btn btn-primary" asp-action="Create">Add Pin</a>
 
 @{
     if(Model != null && Model.Count > 0)
@@ -18,8 +18,8 @@
                     <th scope="col">@nameof(Location.Name)</th>
                     <th scope="col">@nameof(Location.Address)</th>
                     <th scope="col">@nameof(Location.ImageSrc)</th>
-                    <th scope="col">@nameof(Location.LocationType)</th>
-                    <th scope="col">@nameof(Location.LocationKind)</th>
+                    <td scope="col">@nameof(Location.LocationTypeId)</td>
+                    <td scope="col">@nameof(Location.LocationKindId)</td>
                     <th scope="col">Delete</th>
                 </tr>
             </thead>
@@ -32,8 +32,9 @@
                         <td>@location.Name</td>
                         <td>@location.Address</td>
                         <td>@location.ImageSrc</td>
-                        <td>@location.LocationType</td>
-                        <td>@location.LocationKind</td>
+                        <td scope="col">@location.LocationTypeId</td>
+                        <td scope="col">@location.LocationKindId</td>
+                        <td><a class="btn btn-primary" asp-action="Edit" asp-route-id="@location.Id">Edit</a></td>
                         <td>
                             <form asp-action="Delete" asp-route-id="@location.Id" method="post">
                                 <button type="submit" class="btn btn-danger">Delete</button>

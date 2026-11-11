@@ -14,7 +14,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Web.Areas.Admin.Controllers
             _locationAppService = locationAppService;
         }
 
-        public IActionResult Index()
+        public IActionResult PinManagement()
         {
             IList<Location> locations = _locationAppService.SelectAll();
             return View(locations);
@@ -31,7 +31,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Web.Areas.Admin.Controllers
         public IActionResult Create(Location location)
         {
             _locationAppService.Create(location);
-            return RedirectToAction(nameof(LocationController.Index));
+            return RedirectToAction(nameof(LocationController.PinManagement));
         }
 
         [ValidateAntiForgeryToken]
@@ -42,12 +42,26 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Web.Areas.Admin.Controllers
 
             if (deleted)
             {
-                return RedirectToAction(nameof(LocationController.Index));
+                return RedirectToAction(nameof(LocationController.PinManagement));
             }
             else
             {
                 return NotFound();
             }
+        }
+
+        [HttpGet]
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public IActionResult Edit(int id)
+        {
+            _locationAppService.Edit(id);
+            return RedirectToAction(nameof(LocationController.PinManagement));
         }
     }
 }

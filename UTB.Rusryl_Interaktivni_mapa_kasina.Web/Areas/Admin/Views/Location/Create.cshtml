@@ -20,12 +20,17 @@
         <input class="form-control" asp-for="ImageSrc">
     </div>
     <div class="mb-3">
-        <label class="form-label" asp-for="LocationType"></label>
-        <input class="form-control" asp-for="LocationType">
+        <label class="form-label" asp-for="CoordsOnMap"></label>
+        <input class="form-control" asp-for="CoordsOnMap">
     </div>
     <div class="mb-3">
-        <label class="form-label" asp-for="LocationKind"></label>
-        <input class="form-control" asp-for="LocationKind">
+        <label class="form-label" asp-for="LocationTypeId"></label>
+        <input class="form-control" asp-for="LocationTypeId">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="LocationKindId"></label>
+        <input class="form-control" asp-for="LocationKindId">
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
+    <a asp-action="PinManagement" class="btn btn-danger">Cancel</a>
 </form>
