@@ -5,5 +5,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Application.Abstraction
     public interface ICommentAppService
     {
         IList<Comment> SelectAll();
+        void Create(Comment comment);
+        bool Delete(int id);
     }
 }
