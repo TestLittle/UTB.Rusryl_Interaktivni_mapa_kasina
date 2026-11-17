@@ -18,11 +18,13 @@ builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<ICardRepository, CardRepository>();
 builder.Services.AddScoped<IGameRepository, GameRepository>();
+builder.Services.AddScoped<ILocationKindRepository, LocationKindRepository>();
 
 builder.Services.AddScoped<ILocationAppService, LocationAppService>();
 builder.Services.AddScoped<ICommentAppService, CommentAppService>();
 builder.Services.AddScoped<ICardAppService, CardAppService>();
 builder.Services.AddScoped<IGameAppService, GameAppService>();
+builder.Services.AddScoped<ILocationKindAppService, LocationKindAppService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

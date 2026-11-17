@@ -1,0 +1,24 @@
+@using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
+@model Card
+
+@{
+    ViewData["Title"] = "Create New Card";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label class="form-label" asp-for="CardNumber"></label>
+        <input class="form-control" asp-for="CardNumber">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="ExpirationDate"></label>
+        <input class="form-control" asp-for="ExpirationDate">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="SecurityCode"></label>
+        <input class="form-control" asp-for="SecurityCode">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a asp-action="CardManagement" class="btn btn-danger">Cancel</a>
+</form>

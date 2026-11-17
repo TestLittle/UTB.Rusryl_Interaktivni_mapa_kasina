@@ -1,0 +1,17 @@
+@using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
+@model Game
+
+@{
+    ViewData["Title"] = "Create New Game";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label class="form-label" asp-for="GameName"></label>
+        <input class="form-control" asp-for="GameName">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a asp-action="GameManagement" class="btn btn-danger">Cancel</a>
+</form>

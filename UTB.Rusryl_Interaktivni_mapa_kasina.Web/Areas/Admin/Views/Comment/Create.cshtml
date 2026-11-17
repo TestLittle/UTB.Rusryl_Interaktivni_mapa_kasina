@@ -2,7 +2,7 @@
 @model Comment
 
 @{
-    ViewData["Title"] = "Create Comment Location";
+    ViewData["Title"] = "Create New Comment";
 }
 <h1>@ViewData["Title"]</h1>
 
@@ -20,5 +20,5 @@
         <input class="form-control" asp-for="UserId">
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
-    <a asp-action="PinManagement" class="btn btn-danger">Cancel</a>
+    <a asp-action="CommentManagement" class="btn btn-danger">Cancel</a>
 </form>

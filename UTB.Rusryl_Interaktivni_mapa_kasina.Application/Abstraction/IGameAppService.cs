@@ -5,5 +5,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Application.Abstraction
     public interface IGameAppService
     {
         IList<Game> SelectAll();
+        void Create(Game game);
+        bool Delete(int id);
     }
 }

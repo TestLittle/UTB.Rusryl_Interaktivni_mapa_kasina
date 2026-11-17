@@ -16,5 +16,22 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Application.Implementation
         {
             return _gameRepository.GetAll().ToList();
         }
+
+        public void Create(Game game)
+        {
+            _gameRepository.Add(game);
+        }
+
+        public bool Delete(int id)
+        {
+            bool deleted = false;
+            Game? game = _gameRepository.GetById(id);
+            if(game != null)
+            {
+                _gameRepository.Delete(game);
+                deleted = true;
+            }
+            return deleted;
+        }
     }
 }

@@ -1,0 +1,17 @@
+@using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
+@model LocationKind
+
+@{
+    ViewData["Title"] = "Create New Location";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label class="form-label" asp-for="LocationKindName"></label>
+        <input class="form-control" asp-for="LocationKindName">
+    </div>
+    
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a asp-action="LocationKindManagement" class="btn btn-danger">Cancel</a>
+</form>
