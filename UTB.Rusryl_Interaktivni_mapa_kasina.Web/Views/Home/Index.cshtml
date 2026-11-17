@@ -1,6 +1,40 @@
-﻿@{
+﻿@using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
+@model Location
+@{
     ViewData["Title"] = "Main Map";
 }
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.css">
+<script type="importmap">
+    {"imports": {"leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.js"}}
+</script>
+
+<div id="map" style="height: 400px"></div>
+<script type="module">
+    import {LeafletMap, TileLayer, Marker} from 'leaflet';
+    const map = new LeafletMap('map').setView([51.505, -0.09], 13);
+
+    new TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    maxZoom: 19,
+	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    ).addTo(map);
+
+    const marker = new Marker([51.5, -0.09]).addTo(map);
+
+    marker.bindPopup("Popup test.");
+
+    const popup = new Popup();
+
+    function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(map);
+    }
+
+    map.on('click', onMapClick);
+
+</script>
 
 <img src="/img/cloudheart_field.svg"/>
 
