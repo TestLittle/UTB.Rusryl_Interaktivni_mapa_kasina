@@ -4,21 +4,23 @@ using Newtonsoft.Json;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Web.Models;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database;
+using UTB.Rusryl_Interaktivni_mapa_kasina.Application.Abstraction;
 
 namespace UTB.Rusryl_Interaktivni_mapa_kasina.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private CasinoMapDbContext context { get; set; }
-        public HomeController(CasinoMapDbContext _context)
+        ILocationAppService _locationAppService;
+
+        public HomeController(ILocationAppService locationAppService)
         {
-            context = _context;
+            _locationAppService = locationAppService;
         }
 
         public IActionResult Index()
         {
             List<MarkerModel> markers = new List<MarkerModel>();
-            foreach(Location location in this.context.Locations)
+            foreach(Location location in _locationAppService.SelectAll())
             {
                 markers.Add(new MarkerModel
                 {
