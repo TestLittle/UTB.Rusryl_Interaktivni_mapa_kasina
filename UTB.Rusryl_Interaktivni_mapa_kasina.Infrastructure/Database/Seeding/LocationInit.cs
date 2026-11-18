@@ -14,7 +14,8 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database.Seeding
                Name = "Hotel Karlovický Svět",
                ImageSrc = "/img/location/hotel-karlovicky-svet.jpg",
                Address = "Karlovická 668/25",
-               CoordsOnMap = "628.25, 365.22",
+               Longitude = 51.505,
+               Latitude = -0.09,
                LocationTypeId = 1,
                LocationKindId = 5
             });
@@ -25,7 +26,8 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database.Seeding
                Name = "Velké Výhry",
                ImageSrc = "/img/location/velke-vyhry.jpg",
                Address = "Hrací 421/15",
-               CoordsOnMap = "503.11, 505.52",
+               Longitude = 52.505,
+               Latitude = -0.09,
                LocationTypeId = 2,
                LocationKindId = 3
             });
@@ -36,7 +38,8 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database.Seeding
                Name = "Grantova brána",
                ImageSrc = "/img/location/grantova-brana.jpg",
                Address = "Branická 422/31",
-               CoordsOnMap = "425.02, 805.05",
+               Longitude = 50.505,
+               Latitude = -0.09,
                LocationTypeId = 1,
                LocationKindId = 2
             });
@@ -47,7 +50,8 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database.Seeding
                Name = "Světnická Národní Knihovna",
                ImageSrc = "/img/location/svetnicka-narodni-knihovna.jpg",
                Address = "Univerzitní 402/44",
-               CoordsOnMap = "805.80, 580.05",
+               Longitude = 51.505,
+               Latitude = -0.59,
                LocationTypeId = 1,
                LocationKindId = 4
             });
@@ -58,7 +62,8 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database.Seeding
                Name = "U Květy",
                ImageSrc = "/img/location/u-kvety.jpg",
                Address = "Obchodní 450/27",
-               CoordsOnMap = "40.25, 80.50",
+               Longitude = 50.505,
+               Latitude = -0.59,
                LocationTypeId = 1,
                LocationKindId = 1
             });

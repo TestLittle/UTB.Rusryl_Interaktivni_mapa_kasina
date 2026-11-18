@@ -2,11 +2,11 @@
 @model IList<Comment>
 
 @{
-    ViewData["Title"] = "Pin management";
+    ViewData["Title"] = "Comment management";
 }
 <h1>@ViewData["Title"]</h1>
 
-<a class ="btn btn-primary" asp-action="Create">Add Pin</a>
+<a class ="btn btn-primary" asp-action="Create">Add Comment</a>
 
 @{
     if(Model != null && Model.Count > 0)

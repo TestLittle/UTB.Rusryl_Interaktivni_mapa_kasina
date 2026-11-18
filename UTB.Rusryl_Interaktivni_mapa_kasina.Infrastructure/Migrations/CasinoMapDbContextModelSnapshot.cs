@@ -205,19 +205,21 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("CoordsOnMap")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("ImageSrc")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<double>("Latitude")
+                        .HasColumnType("double");
 
                     b.Property<int>("LocationKindId")
                         .HasColumnType("int");
 
                     b.Property<int>("LocationTypeId")
                         .HasColumnType("int");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("double");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -236,50 +238,55 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                         {
                             Id = 1,
                             Address = "Karlovická 668/25",
-                            CoordsOnMap = "628.25, 365.22",
                             ImageSrc = "/img/location/hotel-karlovicky-svet.jpg",
+                            Latitude = -0.089999999999999997,
                             LocationKindId = 5,
                             LocationTypeId = 1,
+                            Longitude = 51.505000000000003,
                             Name = "Hotel Karlovický Svět"
                         },
                         new
                         {
                             Id = 2,
                             Address = "Hrací 421/15",
-                            CoordsOnMap = "503.11, 505.52",
                             ImageSrc = "/img/location/velke-vyhry.jpg",
+                            Latitude = -0.089999999999999997,
                             LocationKindId = 3,
                             LocationTypeId = 2,
+                            Longitude = 52.505000000000003,
                             Name = "Velké Výhry"
                         },
                         new
                         {
                             Id = 3,
                             Address = "Branická 422/31",
-                            CoordsOnMap = "425.02, 805.05",
                             ImageSrc = "/img/location/grantova-brana.jpg",
+                            Latitude = -0.089999999999999997,
                             LocationKindId = 2,
                             LocationTypeId = 1,
+                            Longitude = 50.505000000000003,
                             Name = "Grantova brána"
                         },
                         new
                         {
                             Id = 4,
                             Address = "Univerzitní 402/44",
-                            CoordsOnMap = "805.80, 580.05",
                             ImageSrc = "/img/location/svetnicka-narodni-knihovna.jpg",
+                            Latitude = -0.58999999999999997,
                             LocationKindId = 4,
                             LocationTypeId = 1,
+                            Longitude = 51.505000000000003,
                             Name = "Světnická Národní Knihovna"
                         },
                         new
                         {
                             Id = 5,
                             Address = "Obchodní 450/27",
-                            CoordsOnMap = "40.25, 80.50",
                             ImageSrc = "/img/location/u-kvety.jpg",
+                            Latitude = -0.58999999999999997,
                             LocationKindId = 1,
                             LocationTypeId = 1,
+                            Longitude = 50.505000000000003,
                             Name = "U Květy"
                         });
                 });

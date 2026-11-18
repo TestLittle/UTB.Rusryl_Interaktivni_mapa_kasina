@@ -26,7 +26,6 @@
                     <tr>
                         <th scope="row">@locationKind.Id</th>
                         <td>@locationKind.LocationKindName</td>
-                        <td><a class="btn btn-primary" asp-action="Edit" asp-route-id="@locationKind.Id">Edit</a></td>
                         <td>
                             <form asp-action="Delete" asp-route-id="@locationKind.Id" method="post">
                                 <button type="submit" class="btn btn-danger">Delete</button>

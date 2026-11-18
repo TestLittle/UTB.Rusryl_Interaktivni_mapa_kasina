@@ -114,8 +114,8 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Address = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    CoordsOnMap = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Longitude = table.Column<double>(type: "double", nullable: false),
+                    Latitude = table.Column<double>(type: "double", nullable: false),
                     LocationTypeId = table.Column<int>(type: "int", nullable: false),
                     LocationKindId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -210,14 +210,14 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Location",
-                columns: new[] { "Id", "Address", "CoordsOnMap", "ImageSrc", "LocationKindId", "LocationTypeId", "Name" },
+                columns: new[] { "Id", "Address", "ImageSrc", "Latitude", "LocationKindId", "LocationTypeId", "Longitude", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Karlovická 668/25", "628.25, 365.22", "/img/location/hotel-karlovicky-svet.jpg", 5, 1, "Hotel Karlovický Svět" },
-                    { 2, "Hrací 421/15", "503.11, 505.52", "/img/location/velke-vyhry.jpg", 3, 2, "Velké Výhry" },
-                    { 3, "Branická 422/31", "425.02, 805.05", "/img/location/grantova-brana.jpg", 2, 1, "Grantova brána" },
-                    { 4, "Univerzitní 402/44", "805.80, 580.05", "/img/location/svetnicka-narodni-knihovna.jpg", 4, 1, "Světnická Národní Knihovna" },
-                    { 5, "Obchodní 450/27", "40.25, 80.50", "/img/location/u-kvety.jpg", 1, 1, "U Květy" }
+                    { 1, "Karlovická 668/25", "/img/location/hotel-karlovicky-svet.jpg", -0.089999999999999997, 5, 1, 51.505000000000003, "Hotel Karlovický Svět" },
+                    { 2, "Hrací 421/15", "/img/location/velke-vyhry.jpg", -0.089999999999999997, 3, 2, 52.505000000000003, "Velké Výhry" },
+                    { 3, "Branická 422/31", "/img/location/grantova-brana.jpg", -0.089999999999999997, 2, 1, 50.505000000000003, "Grantova brána" },
+                    { 4, "Univerzitní 402/44", "/img/location/svetnicka-narodni-knihovna.jpg", -0.58999999999999997, 4, 1, 51.505000000000003, "Světnická Národní Knihovna" },
+                    { 5, "Obchodní 450/27", "/img/location/u-kvety.jpg", -0.58999999999999997, 1, 1, 50.505000000000003, "U Květy" }
                 });
 
             migrationBuilder.InsertData(

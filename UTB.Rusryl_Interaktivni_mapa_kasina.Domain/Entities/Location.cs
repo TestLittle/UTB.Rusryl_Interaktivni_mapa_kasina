@@ -12,7 +12,8 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
         public string ImageSrc { get; set; }
         [Required]
         public string Address { get; set; }
-        public string CoordsOnMap { get; set; }
+        public double Longitude { get; set; }
+        public double Latitude { get; set; }
 
         [ForeignKey(nameof(LocationType))]
         public int LocationTypeId { get; set; }
