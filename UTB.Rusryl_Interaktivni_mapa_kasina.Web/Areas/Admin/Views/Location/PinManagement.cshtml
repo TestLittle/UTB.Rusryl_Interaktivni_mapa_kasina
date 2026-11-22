@@ -37,7 +37,7 @@
                         <td scope="col">@location.LocationKindId</td>
                         <td><a class="btn btn-primary" asp-action="Edit" asp-route-id="@location.Id">Edit</a></td>
                         <td>
-                            <form asp-action="Delete" asp-route-id="@location.Id" method="post">
+                            <form asp-action="Delete" asp-route-id="@location.Id" method="post" onclick="return confirmDelete();">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </td>
@@ -49,5 +49,10 @@
     else
     {
         <p>There are no locations!</p>
+    }
+
+    @section Scripts
+    {
+        <script src="~/wwwroot/js/dialogs.js"></script>
     }
 }

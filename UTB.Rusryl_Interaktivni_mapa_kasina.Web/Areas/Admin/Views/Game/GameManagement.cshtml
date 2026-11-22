@@ -27,7 +27,7 @@
                         <th scope="row">@game.Id</th>
                         <td>@game.GameName</td>
                         <td>
-                            <form asp-action="Delete" asp-route-id="@game.Id" method="post">
+                            <form asp-action="Delete" asp-route-id="@game.Id" method="post" onclick="return confirmDelete();">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </td>
@@ -39,5 +39,10 @@
     else
     {
         <p>There are no games!</p>
+    }
+
+    @section Scripts
+    {
+        <script src="~/wwwroot/js/dialogs.js"></script>
     }
 }

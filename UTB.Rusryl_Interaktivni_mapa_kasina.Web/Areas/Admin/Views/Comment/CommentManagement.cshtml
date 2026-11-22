@@ -33,7 +33,7 @@
                         <td>@comment.LocationId</td>
                         <td scope="col">@comment.UserId</td>
                         <td>
-                            <form asp-action="Delete" asp-route-id="@comment.Id" method="post">
+                            <form asp-action="Delete" asp-route-id="@comment.Id" method="post" onclick="return confirmDelete();">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </td>
@@ -45,5 +45,10 @@
     else
     {
         <p>There are no locations!</p>
+    }
+
+    @section Scripts
+    {
+        <script src="~/wwwroot/js/dialogs.js"></script>
     }
 }
