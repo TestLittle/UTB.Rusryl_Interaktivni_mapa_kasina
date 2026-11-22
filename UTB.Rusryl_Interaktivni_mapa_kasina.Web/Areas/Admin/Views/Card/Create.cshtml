@@ -7,17 +7,21 @@
 <h1>@ViewData["Title"]</h1>
 
 <form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="mb-3">
         <label class="form-label" asp-for="CardNumber"></label>
         <input class="form-control" asp-for="CardNumber">
+        <span asp-validation-for="CardNumber" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label class="form-label" asp-for="ExpirationDate"></label>
         <input class="form-control" asp-for="ExpirationDate">
+        <span asp-validation-for="ExpirationDate" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label class="form-label" asp-for="SecurityCode"></label>
         <input class="form-control" asp-for="SecurityCode">
+        <span asp-validation-for="SecurityCode" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label class="form-label" asp-for="CardTypeId"></label>
@@ -26,3 +30,8 @@
     <button type="submit" class="btn btn-success">Submit</button>
     <a asp-action="CardManagement" class="btn btn-danger">Cancel</a>
 </form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

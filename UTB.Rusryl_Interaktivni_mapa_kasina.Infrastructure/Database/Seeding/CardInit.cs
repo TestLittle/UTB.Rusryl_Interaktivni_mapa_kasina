@@ -11,7 +11,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database.Seeding
             cards.Add(new Card()
             {
                 Id = 1,
-                CardNumber = 371449635398431,
+                CardNumber = "371449635398431",
                 ExpirationDate = "03/30",
                 SecurityCode = "424",
                 CardTypeId = 3
@@ -20,7 +20,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database.Seeding
             cards.Add(new Card()
             {
                 Id = 2,
-                CardNumber = 4012000033330026,
+                CardNumber = "4012000033330026",
                 ExpirationDate = "04/27",
                 SecurityCode = "264",
                 CardTypeId = 1
@@ -29,7 +29,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database.Seeding
             cards.Add(new Card()
             {
                 Id = 3,
-                CardNumber = 2223000048400011,
+                CardNumber = "2223000048400011",
                 ExpirationDate = "10/28",
                 SecurityCode = "655",
                 CardTypeId = 2

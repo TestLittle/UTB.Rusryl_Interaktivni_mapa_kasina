@@ -30,8 +30,13 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Web.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Card card)
         {
-            _cardAppService.Create(card);
-            return RedirectToAction(nameof(CardController.CardManagement));
+            if (ModelState.IsValid)
+            {
+                _cardAppService.Create(card);
+                return RedirectToAction(nameof(CardController.CardManagement));
+            }
+            
+            return View(card);
         }
 
         [ValidateAntiForgeryToken]

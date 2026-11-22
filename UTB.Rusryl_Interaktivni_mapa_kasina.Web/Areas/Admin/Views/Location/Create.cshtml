@@ -7,13 +7,16 @@
 <h1>@ViewData["Title"]</h1>
 
 <form asp-action="Create" method="post">
+    <span asp-validation-summary="All" class="text-danger"></span>
     <div class="mb-3">
         <label class="form-label" asp-for="Name"></label>
         <input class="form-control" asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label class="form-label" asp-for="Address"></label>
         <input class="form-control" asp-for="Address">
+        <span asp-validation-for="Address" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label class="form-label" asp-for="ImageSrc"></label>
@@ -38,3 +41,8 @@
     <button type="submit" class="btn btn-success">Submit</button>
     <a asp-action="PinManagement" class="btn btn-danger">Cancel</a>
 </form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
