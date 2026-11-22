@@ -4,6 +4,46 @@
     ViewData["Title"] = "Main Map";
 }
 
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var markers = eval('@Html.Raw(ViewBag.Markers)');
+            // Inicializace mapy
+            var map = L.map('map').setView([markers[0].Lat, markers[0].Lng], 8);
+
+            // Nastaveni povinnych atributu openstreetmap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Pridani jednotlivych pinu do mapy
+            markers.forEach(function (item) {
+                L.marker([item.Lat, item.Lng])
+                    .bindPopup("<b>" + item.Title + "</b><br />" + item.Description).addTo(map);
+            });
+
+            function onMapClick(position) {
+                popup.setLatLng(position.latlng)
+                     .setContent("You clicked the map at " + position.latlng.toString())
+                     .openOn(map);
+            }
+
+            map.on('click', onMapClick);
+        };
+    </script>
+</head>
+<body>
+    <div id="map" style="height: 400px;"></div>
+</body>
+</html>
+@*
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.css">
 <script type="importmap">
     {"imports": {"leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.js"}}
@@ -33,8 +73,9 @@
     }
 
     map.on('click', onMapClick);
-
 </script>
+*@
+
 
 <img src="/img/cloudheart_field.svg"/>
 
