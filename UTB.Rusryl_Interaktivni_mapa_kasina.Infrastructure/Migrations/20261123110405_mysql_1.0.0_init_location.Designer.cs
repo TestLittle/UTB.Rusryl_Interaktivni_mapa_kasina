@@ -12,7 +12,7 @@ using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database;
 namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
 {
     [DbContext(typeof(CasinoMapDbContext))]
-    [Migration("20261118084108_mysql_1.0.0_init_location")]
+    [Migration("20261123110405_mysql_1.0.0_init_location")]
     partial class mysql_100_init_location
     {
         /// <inheritdoc />
@@ -33,8 +33,9 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<long>("CardNumber")
-                        .HasColumnType("bigint");
+                    b.Property<string>("CardNumber")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("CardTypeId")
                         .HasColumnType("int");
@@ -57,7 +58,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CardNumber = 371449635398431L,
+                            CardNumber = "371449635398431",
                             CardTypeId = 3,
                             ExpirationDate = "03/30",
                             SecurityCode = "424"
@@ -65,7 +66,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                         new
                         {
                             Id = 2,
-                            CardNumber = 4012000033330026L,
+                            CardNumber = "4012000033330026",
                             CardTypeId = 1,
                             ExpirationDate = "04/27",
                             SecurityCode = "264"
@@ -73,7 +74,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                         new
                         {
                             Id = 3,
-                            CardNumber = 2223000048400011L,
+                            CardNumber = "2223000048400011",
                             CardTypeId = 2,
                             ExpirationDate = "10/28",
                             SecurityCode = "655"
@@ -226,7 +227,8 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 

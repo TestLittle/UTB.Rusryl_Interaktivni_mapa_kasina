@@ -83,7 +83,8 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CardNumber = table.Column<long>(type: "bigint", nullable: false),
+                    CardNumber = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ExpirationDate = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     SecurityCode = table.Column<string>(type: "longtext", nullable: false)
@@ -108,7 +109,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false)
+                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ImageSrc = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -203,9 +204,9 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                 columns: new[] { "Id", "CardNumber", "CardTypeId", "ExpirationDate", "SecurityCode" },
                 values: new object[,]
                 {
-                    { 1, 371449635398431L, 3, "03/30", "424" },
-                    { 2, 4012000033330026L, 1, "04/27", "264" },
-                    { 3, 2223000048400011L, 2, "10/28", "655" }
+                    { 1, "371449635398431", 3, "03/30", "424" },
+                    { 2, "4012000033330026", 1, "04/27", "264" },
+                    { 3, "2223000048400011", 2, "10/28", "655" }
                 });
 
             migrationBuilder.InsertData(
