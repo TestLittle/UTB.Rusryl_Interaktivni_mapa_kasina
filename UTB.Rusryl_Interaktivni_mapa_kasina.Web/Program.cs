@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Application.Abstraction;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Application.Implementation;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Repositories;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database;
+using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Identity;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("MySQL");
 var serverVersion = ServerVersion.AutoDetect(connectionString);
 builder.Services.AddDbContext<CasinoMapDbContext>(optionBuilder => optionBuilder.UseMySql(connectionString, serverVersion));
+
+builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<CasinoMapDbContext>().AddDefaultTokenProviders();
 
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
@@ -38,6 +42,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();

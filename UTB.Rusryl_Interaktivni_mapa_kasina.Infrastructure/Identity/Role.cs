@@ -2,19 +2,16 @@
 
 namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Identity
 {
-    public class Role
+    public class Role : IdentityRole<int>
     {
-        public class Role : IdentityRole<int>
+        public Role(string role) : base(role)
         {
-            public Role(string role) : base(role)
-            {
 
-            }
+        }
 
-            public Role() : base()
-            {
+        public Role() : base()
+        {
 
-            }
         }
     }
 }
