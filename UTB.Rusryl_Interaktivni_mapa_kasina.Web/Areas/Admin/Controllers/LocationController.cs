@@ -30,8 +30,12 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Web.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Location location)
         {
-            _locationAppService.Create(location);
-            return RedirectToAction(nameof(LocationController.PinManagement));
+            if (ModelState.IsValid)
+            {
+                _locationAppService.Create(location);
+                return RedirectToAction(nameof(LocationController.PinManagement));
+            }
+            return View(location);
         }
 
         [ValidateAntiForgeryToken]
