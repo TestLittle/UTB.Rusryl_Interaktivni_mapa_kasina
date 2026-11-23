@@ -12,7 +12,7 @@ using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database;
 namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
 {
     [DbContext(typeof(CasinoMapDbContext))]
-    [Migration("20261123113458_mysql_1.0.0_identity_user_role")]
+    [Migration("20261123114016_mysql_1.0.0_identity_user_role")]
     partial class mysql_100_identity_user_role
     {
         /// <inheritdoc />
@@ -573,9 +573,6 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256)");
-
-                    b.Property<string>("Username")
-                        .HasColumnType("longtext");
 
                     b.Property<string>("ZipCode")
                         .HasColumnType("longtext");

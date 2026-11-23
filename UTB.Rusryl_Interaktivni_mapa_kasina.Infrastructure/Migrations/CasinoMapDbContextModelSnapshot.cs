@@ -571,9 +571,6 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256)");
 
-                    b.Property<string>("Username")
-                        .HasColumnType("longtext");
-
                     b.Property<string>("ZipCode")
                         .HasColumnType("longtext");
 

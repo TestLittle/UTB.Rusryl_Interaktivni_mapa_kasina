@@ -3,7 +3,6 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities.Interfaces
 {
     public interface IUser<TKey> : IEntity<TKey>
     {
-        string? Username { get; set; }
         string? Email { get; set; }
         string? FirstName { get; set; }
         string? LastName { get; set; }
