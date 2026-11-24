@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database.Seeding;
 using UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Identity;
@@ -45,6 +46,17 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Database
 
             CommentInit commentInit = new CommentInit();
             modelBuilder.Entity<Comment>().HasData(commentInit.GetComments());
+
+            RoleInit roleInit = new RoleInit();
+            modelBuilder.Entity<Role>().HasData(roleInit.GetRolesALU());
+
+            UserInit userInit = new UserInit();
+            User admin = userInit.GetAdmin();
+            modelBuilder.Entity<User>().HasData(admin);
+
+            UserRoleInit userRoleInit = new UserRoleInit();
+            List<IdentityUserRole<int>> adminUserRoles = userRoleInit.GetRolesForAdmin();
+            modelBuilder.Entity<IdentityUserRole<int>>().HasData(adminUserRoles);
         }
     }
 }

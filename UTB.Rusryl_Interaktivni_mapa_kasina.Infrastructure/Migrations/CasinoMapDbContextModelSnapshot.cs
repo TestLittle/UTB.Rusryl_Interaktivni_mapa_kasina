@@ -104,6 +104,18 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            RoleId = 1
+                        },
+                        new
+                        {
+                            UserId = 1,
+                            RoleId = 2
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
@@ -496,6 +508,22 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ConcurrencyStamp = "9cf14c2c-19e7-40d6-b744-8917505c3106",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ConcurrencyStamp = "29dafca7-cd20-4cd9-a3dd-4779d7bac3ee",
+                            Name = "LoggedUser",
+                            NormalizedName = "LOGGEDUSER"
+                        });
                 });
 
             modelBuilder.Entity("UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Identity.User", b =>
@@ -584,6 +612,31 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Infrastructure.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccessFailedCount = 0,
+                            Address = "Havlickova 12",
+                            Balance = 1000000.0,
+                            City = "Krnov",
+                            ConcurrencyStamp = "b09a83ae-cfd3-4ee7-97e6-fbcf0b0fe78c",
+                            Country = "Czech Republic",
+                            Email = "admin@admin.cz",
+                            EmailConfirmed = true,
+                            FirstName = "Admin",
+                            LastName = "Stranek",
+                            LockoutEnabled = true,
+                            NormalizedEmail = "ADMIN@ADMIN.CZ",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEM9O98Suoh2o2JOK1ZOJScgOfQ21odn/k6EYUpGWnrbevCaBFFXrNL7JZxHNczhh/w==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "SEJEPXC646ZBNCDYSM3H5FRK5RWP2TN6",
+                            TwoFactorEnabled = false,
+                            UserName = "admin",
+                            ZipCode = "79401"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
