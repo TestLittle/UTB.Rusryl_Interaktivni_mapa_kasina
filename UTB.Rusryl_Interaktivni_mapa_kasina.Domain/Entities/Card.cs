@@ -18,6 +18,6 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
         public string SecurityCode { get; set; }
         [ForeignKey(nameof(CardType))]
         public int CardTypeId { get; set; }
-        public CardType CardType { get; set; }
+        public CardType? CardType { get; set; }
     }
 }

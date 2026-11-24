@@ -1,0 +1,39 @@
+﻿@using UTB.Rusryl_Interaktivni_mapa_kasina.Application.ViewModels
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Log In";
+}
+
+<div id="registration-login-form">
+    <form asp-action="Login" class="form-signin" method="post">
+
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align:center">Login</h1>
+
+        <br />
+        @{
+            if(Model?.LoginFailed == true)
+            {
+                <div class="text-danger">Login unsuccessful.</div>
+            }
+        }
+        <div asp-validation-summary="All" class="text-danger"></div>
+        
+        <input asp-for="Username" type="text" id="inpUsername" class="form-control" placeholder="Username" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+
+        <input asp-for="Password" type="text" id="inpPassword" class="form-control" placeholder="Password" />
+        <br />
+
+        <div class="text-center">
+            <button class="btn btn-success btn-block" type="submit">Log In</button>
+        </div>
+        <br />
+        <hr />
+        <a asp-action="Registration" class="btn btn-secondary btn-block text-white" type="button" id="btnRegister">Create an account</a>
+    </form>
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
