@@ -1,0 +1,130 @@
+﻿@model UTB.Rusryl_Interaktivni_mapa_kasina.Web.Areas.Admin.Controllers.BlackjackTableViewModel
+
+@{
+    ViewData["Title"] = "Blackjack";
+
+    string GetSuitSymbol(string suit) => suit.ToLowerInvariant() switch
+    {
+        "hearts" => "♥",
+        "diamonds" => "♦",
+        "clubs" => "♣",
+        "spades" => "♠",
+        _ => ""
+    };
+
+    string GetSuitColorClass(string suit) => suit.ToLowerInvariant() is "hearts" or "diamonds"
+        ? "card-red"
+        : "card-black";
+}
+
+<style>
+    .blackjack-table {
+        background: radial-gradient(circle, #2e7d32 0%, #1b5e20 100%);
+        border: 14px solid #4e342e;
+        border-radius: 120px;
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 48px 24px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35), inset 0 0 40px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 42px;
+    }
+
+    .hand-section { text-align: center; }
+    .hand-label { color: white; margin-bottom: 12px; font-weight: 600; }
+    .cards-row { display: flex; justify-content: center; gap: 12px; min-height: 120px; }
+    .playing-card {
+        width: 80px;
+        height: 115px;
+        padding: 8px;
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .card-red { color: #d32f2f; }
+    .card-black { color: #212121; }
+    .card-corner { font-size: 1.1rem; font-weight: bold; line-height: 1; }
+    .card-corner.bottom { transform: rotate(180deg); }
+    .card-center { font-size: 2.2rem; text-align: center; line-height: 1; }
+    .card-back {
+        background: repeating-linear-gradient(45deg, #1565c0, #1565c0 10px, #0d47a1 10px, #0d47a1 20px);
+        border: 3px solid white;
+    }
+
+    @@media (max-width: 576px) {
+        .blackjack-table { border-width: 8px; border-radius: 48px; padding: 32px 10px; gap: 30px; }
+        .cards-row { gap: 6px; }
+        .playing-card { width: 58px; height: 84px; padding: 5px; }
+        .card-corner { font-size: 0.85rem; }
+        .card-center { font-size: 1.5rem; }
+    }
+</style>
+
+<h1 class="text-center">Blackjack</h1>
+<p class="text-center text-muted">Cílem je dostat se co nejblíže 21 bodům, ale nepřekročit je. Eso má hodnotu 1 nebo 11.</p>
+
+<div class="blackjack-table">
+    <section class="hand-section">
+        <h2 class="hand-label">Dealer <span class="fw-normal">(@(Model.DealerCards.Any(card => !card.IsFaceUp) ? "?" : Model.DealerScore))</span></h2>
+        <div class="cards-row">
+            @foreach (var card in Model.DealerCards)
+            {
+                if (card.IsFaceUp)
+                {
+                    <div class="playing-card @GetSuitColorClass(card.Suit)" role="img" aria-label="@card.Value @card.Suit">
+                        <div class="card-corner">@card.Value<br />@GetSuitSymbol(card.Suit)</div>
+                        <div class="card-center">@GetSuitSymbol(card.Suit)</div>
+                        <div class="card-corner bottom">@card.Value<br />@GetSuitSymbol(card.Suit)</div>
+                    </div>
+                }
+                else
+                {
+                    <div class="playing-card card-back" role="img" aria-label="Skrytá karta dealera"></div>
+                }
+            }
+        </div>
+    </section>
+
+    <section class="hand-section">
+        <h2 class="hand-label">Hráč (@Model.PlayerScore)</h2>
+        <div class="cards-row">
+            @foreach (var card in Model.PlayerCards)
+            {
+                <div class="playing-card @GetSuitColorClass(card.Suit)" role="img" aria-label="@card.Value @card.Suit">
+                    <div class="card-corner">@card.Value<br />@GetSuitSymbol(card.Suit)</div>
+                    <div class="card-center">@GetSuitSymbol(card.Suit)</div>
+                    <div class="card-corner bottom">@card.Value<br />@GetSuitSymbol(card.Suit)</div>
+                </div>
+            }
+        </div>
+    </section>
+</div>
+
+@if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+{
+    <div class="alert alert-info text-center" role="status">@Model.StatusMessage</div>
+}
+@if (!string.IsNullOrWhiteSpace(Model.RoundResult))
+{
+    <h2 class="text-center">@Model.RoundResult</h2>
+}
+
+<div class="d-flex justify-content-center gap-2 mb-4">
+    @if (Model.IsPlayerTurn && !Model.IsGameOver)
+    {
+        <form asp-area="Admin" asp-controller="Blackjack" asp-action="Hit" method="post">
+            <button type="submit" class="btn btn-primary" disabled="@(Model.PlayerScore >= 21 || Model.RemainingCards.Count == 0)">Další karta</button>
+        </form>
+        <form asp-area="Admin" asp-controller="Blackjack" asp-action="Stand" method="post">
+            <button type="submit" class="btn btn-success">Stát</button>
+        </form>
+    }
+    <form asp-area="Admin" asp-controller="Blackjack" asp-action="NewGame" method="post">
+        <button type="submit" class="btn btn-secondary">Nová hra</button>
+    </form>
+</div>
