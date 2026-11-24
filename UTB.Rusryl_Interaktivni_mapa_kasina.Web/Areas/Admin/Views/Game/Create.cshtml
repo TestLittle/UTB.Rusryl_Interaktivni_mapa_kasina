@@ -7,6 +7,7 @@
 <h1>@ViewData["Title"]</h1>
 
 <form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="mb-3">
         <label class="form-label" asp-for="GameName"></label>
         <input class="form-control" asp-for="GameName">
@@ -15,3 +16,8 @@
     <button type="submit" class="btn btn-success">Submit</button>
     <a asp-action="GameManagement" class="btn btn-danger">Cancel</a>
 </form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
