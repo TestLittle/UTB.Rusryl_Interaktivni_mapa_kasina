@@ -4,8 +4,12 @@
     ViewData["Title"] = "Create a new account";
 }
 
+@section Styles{
+    <link rel="stylesheet" href="~/css/login.css" />
+}
+
 <div id="registration-login-form">
-    <form asp-for="Registration" method="post" class="form-signup">
+    <form asp-for="Registration" method="post" class="form-registration">
 
         <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Registration</h1>
         <div asp-validation-summary="All" class="text-danger"></div>

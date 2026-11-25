@@ -1,0 +1,72 @@
+﻿#registration-login-form
+{
+    width: 412px;
+    margin: 10vh auto;
+    background-color: #f3f3f3;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3 cubic-bezier(.25,.8,.25,1);
+}
+
+#registration-login-form form{
+    width: 100%;
+    max-width: 410px;
+    padding: 15px;
+    margin: auto;
+}
+
+#registration-login-form .form-control{
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#registration-login-form .form-signin input[type="email"]{
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#registration-login-form .form-signin input[type="password"]{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#registration-login-form a{
+    display: block;
+    padding-top: 10px;
+    color: lightseagreen;
+}
+
+#registration-login-form .lines{
+    width: 200px;
+    border: 1px solid red;
+}
+
+#registration-login-form button[type="submit"]{
+    margin-top: 10px;
+}
+
+#registration-login-form #registration-login-form{
+    display: none;
+}
+
+#registration-login-form .form-registration{
+    width: 210px;
+}
+
+#registration-login-form .form-registration input{
+    margin-bottom: 2px;
+}
+
+.form-registration{
+    width: 210px !important;
+    margin: 0 auto;
+}
+
+@media screen and (max-width:500px){
+    #registration-login-form{
+        width: 300px;
+    }
+}
