@@ -20,7 +20,7 @@ namespace UTB.Rusryl_Interaktivni_mapa_kasina.Domain.Entities
 
         [ForeignKey(nameof(User))]
         public int UserId { get; set; }
-        public IUser?<int> User { get; set; }
+        public IUser<int>? User { get; set; }
         
     }
 }
